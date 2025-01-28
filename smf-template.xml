@@ -17,7 +17,7 @@
       <service_fmri value='svc:/smartdc/application/config-agent'/>
     </dependency>
     -->
-    <exec_method name='start' type='method' exec='node --abort-on-uncaught-exception server.js %{minimanta/port} &amp;' timeout_seconds='30'>
+    <exec_method name='start' type='method' exec='__DIRECTORY__/build/node/bin/node --abort-on-uncaught-exception server.js %{minimanta/port} &amp;' timeout_seconds='30'>
       <method_context working_directory='__DIRECTORY__'>
         <method_environment>
           <envvar name='PATH' value='/opt/local/bin:/usr/bin:/usr/sbin:/bin'/>
@@ -50,7 +50,7 @@
     <stability value='Unstable'/>
     <template>
       <common_name>
-        <loctext xml:lang='C'>Joyent Single-Zone Manta-Comptible Storage Service</loctext>
+        <loctext xml:lang='C'>Single-Zone Manta-Comptible Storage Service</loctext>
       </common_name>
     </template>
   </service>
